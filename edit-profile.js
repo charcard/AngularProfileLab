@@ -4,23 +4,22 @@ const editProfile = {
     template:`
     <form ng-submit="$ctrl.editProfile($ctrl.user);">
     <p>Name</p>
-    <input type="text" ng-model="{{ $ctrl.user.name }}">
+    <input type="text" ng-model="$ctrl.user.name">
     <p>Contact</p>
-    <input type="text" ng-model="{{ $ctrl.user.contact }}">
+    <input type="text" ng-model="$ctrl.user.contact">
     <p>Bio</p>
-    <input type="text" ng-model="{{ $ctrl.user.bio }}">
+    <input type="text" ng-model="$ctrl.user.bio">
     <a class="updatebutton" href="#!/user-profile">Update</a>
     </form>
     `,
     controller: ["ProfileService", function(ProfileService) {
         const vm = this;
-        vm.user = angular.copy(ProfileService.getUserInfo());
+        vm.user = angular.copy(ProfileService.getUserProfile());
         vm.editProfile = (user) => {
-            ProfileService.setUserInfo(user);
+            ProfileService.setUserProfile(user);
             };
         }]
 };
-
 angular
     .module("app")
     .component("editProfile", editProfile);

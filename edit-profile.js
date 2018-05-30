@@ -15,11 +15,12 @@ const editProfile = {
     controller: ["ProfileService", function(ProfileService) {
         const vm = this;
         vm.user = angular.copy(ProfileService.getUserProfile());
-        vm.editProfile = (user) => {
+        vm.fillOut = (user) => {
             ProfileService.setUserProfile(user);
             };
         }]
 };
+
 angular
     .module("app")
     .component("editProfile", editProfile);

@@ -41,6 +41,10 @@ body {
     height: 10%;
     background-color: #505355;
 }
+.editbutton hover {
+    background-color: #5BECD8;
+}
+
 form {
     background-color: white;
     width: 400px;
@@ -54,4 +58,8 @@ form {
     width: 80%;
     height: 10%;
     background-color: #505355;
+}
+
+.updatebutton hover {
+    background-color: #5BECD8;
 }
